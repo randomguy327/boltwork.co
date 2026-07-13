@@ -1,16 +1,18 @@
 /* ============ Boltwork — style.css ============ */
+/* Light theme: maximum white, minimal green accent */
 
 :root {
-  --bg: #0a0a0f;
-  --bg-alt: #101018;
-  --surface: #16161f;
-  --surface-hover: #1c1c28;
-  --border: #26263a;
-  --text: #f2f2f5;
-  --text-muted: #a0a0b2;
-  --accent: #ffd60a;
-  --accent-dim: #ffd60a22;
-  --accent-text: #0a0a0f;
+  --bg: #ffffff;
+  --bg-alt: #fafbfa;
+  --surface: #ffffff;
+  --surface-hover: #fcfdfc;
+  --border: #e8ebe9;
+  --text: #14181a;
+  --text-muted: #5c6664;
+  --accent: #16a34a;
+  --accent-dark: #128040;
+  --accent-dim: rgba(22, 163, 74, 0.08);
+  --accent-text: #ffffff;
   --radius: 14px;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Space Grotesk", var(--font-body);
@@ -86,8 +88,9 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 }
 
 .btn-primary:hover {
+  background: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px var(--accent-dim), 0 4px 14px rgba(255, 214, 10, 0.35);
+  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.22);
 }
 
 .btn-ghost {
@@ -97,7 +100,8 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 }
 
 .btn-ghost:hover {
-  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -110,7 +114,7 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 15, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
@@ -131,10 +135,15 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
 }
 
-.logo-bolt { filter: drop-shadow(0 0 8px rgba(255, 214, 10, 0.6)); }
+.logo-bolt {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent);
+  flex-shrink: 0;
+}
 
 .nav-links {
   display: flex;
@@ -176,7 +185,7 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
   transform: translateX(-50%);
   width: 900px;
   height: 600px;
-  background: radial-gradient(ellipse at center, rgba(255, 214, 10, 0.12) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(22, 163, 74, 0.05) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -208,8 +217,10 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 }
 
 .hero-tags span::before {
-  content: "⚡";
-  font-size: 0.75rem;
+  content: "✓";
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
 }
 
 /* ---------- Tool strip ---------- */
@@ -242,7 +253,7 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
   color: var(--text-muted);
   font-weight: 600;
   font-size: 0.95rem;
-  background: var(--surface);
+  background: var(--bg);
   transition: color 0.15s, border-color 0.15s;
 }
 
@@ -269,13 +280,13 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 28px;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: #3a3a55;
-  background: var(--surface-hover);
+  border-color: #cfe8d8;
+  box-shadow: 0 12px 32px rgba(20, 24, 26, 0.06);
 }
 
 .card p { color: var(--text-muted); font-size: 0.95rem; }
@@ -287,10 +298,14 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 26px 28px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.usecase:hover { transform: translateY(-3px); border-color: #3a3a55; }
+.usecase:hover {
+  transform: translateY(-3px);
+  border-color: #cfe8d8;
+  box-shadow: 0 12px 32px rgba(20, 24, 26, 0.06);
+}
 
 .usecase p { color: var(--text-muted); font-size: 0.95rem; }
 
@@ -367,9 +382,7 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 .cta {
   padding: 110px 0;
   text-align: center;
-  background:
-    radial-gradient(ellipse at 50% 100%, rgba(255, 214, 10, 0.08) 0%, transparent 60%),
-    var(--bg-alt);
+  background: var(--bg);
   border-top: 1px solid var(--border);
 }
 
@@ -392,22 +405,23 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 .contact-form textarea {
   width: 100%;
   padding: 15px 18px;
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 10px;
   color: var(--text);
   font-family: var(--font-body);
   font-size: 0.98rem;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
-.contact-form ::placeholder { color: #6a6a80; }
+.contact-form ::placeholder { color: #9aa4a0; }
 
 .form-note {
   text-align: center;
@@ -424,6 +438,7 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 .contact-alt a {
   color: var(--accent);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .contact-alt a:hover { text-decoration: underline; }
@@ -433,6 +448,7 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 .footer {
   padding: 48px 0;
   border-top: 1px solid var(--border);
+  background: var(--bg-alt);
 }
 
 .footer-inner {

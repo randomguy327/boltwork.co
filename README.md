@@ -7,7 +7,7 @@ Marketing site for **Boltwork** — an AI automation agency for ecommerce and Sh
 Pure static site — no build step, no dependencies.
 
 - `index.html` — single-page site (hero, services, automations, process, pricing, FAQ, contact)
-- `css/style.css` — dark theme, yellow bolt accent, responsive, scroll-reveal styles
+- `css/style.css` — white theme with minimal green accent, responsive, scroll-reveal styles
 - `js/main.js` — scroll-reveal, stat count-up, mobile nav
 
 ## Run locally
