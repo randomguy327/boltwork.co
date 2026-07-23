@@ -443,9 +443,11 @@
         <p class="section-lead reveal">
           Stop waiting on referrals. Get on calls with companies that are hiring right now.
         </p>
-        <div class="final-cta reveal">
-          <!-- #book placeholder — swap for a Calendly/Cal.com embed or link later -->
-          <a href="#book" class="btn btn-primary btn-lg">Book a call</a>
+        <div class="booking reveal">
+          <!-- Cal.com inline embed mounts here. data-cal-link is the single place
+               to set the booking link (username/event-type). -->
+          <div class="booking-cal" id="cal-inline-discovery" data-cal-link="REPLACE-CAL-USERNAME/discovery-call"></div>
+          <p class="booking-fallback mono">Scheduling runs on <a href="https://cal.com" rel="noopener">Cal.com</a> — pick a time above, or use the direct link.</p>
         </div>
       </div>
     </section>

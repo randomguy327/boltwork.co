@@ -766,7 +766,23 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .final { padding-block: var(--section-pad); text-align: center; }
 .final .kicker { margin-bottom: 0.6rem; }
 .final .section-lead { margin-inline: auto; }
-.final-cta { margin-top: 2.2rem; display: flex; justify-content: center; }
+.booking { margin-top: 2.6rem; }
+.booking-cal {
+  max-width: 62rem;
+  margin-inline: auto;
+  min-height: 620px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg);
+  background: var(--paper-raised);
+  box-shadow: var(--shadow-card);
+  overflow: auto;
+  padding: 0.75rem;
+}
+.booking-fallback { margin-top: 1.1rem; color: var(--ink-subtle); }
+.booking-fallback a { color: var(--accent-deep); }
+@media (max-width: 44em) {
+  .booking-cal { min-height: 560px; padding: 0.4rem; }
+}
 
 .footer { border-top: 1px solid var(--border-faint); padding-block: 2rem; }
 .footer-inner {
